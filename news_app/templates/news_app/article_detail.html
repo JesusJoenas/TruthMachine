@@ -1,0 +1,46 @@
+{% extends 'news_app/base.html' %}
+{% block title %}Truth Machine | Detailed View{% endblock %}
+{% block content %}
+
+<div class="text-center my-5">
+    <h1 class="display-4 fw-bold">Detailed View</h1>
+    
+    <!-- Article Content Card -->
+    <div class="card bg-black p-4 my-4 mx-auto" style="max-width: 800px; border-radius: 20px;">
+        
+        <!-- Display the article content or show a fallback message if missing -->
+        <p class="lead">{{ content|default:"Content could not be fetched. Please view the original article."|safe }}</p>
+        
+        <!-- Show the Truth Score if available -->
+        {% if truth_score %}
+        <div class="badge mt-3 
+            {% if truth_score < 30 %}
+                bg-danger
+            {% elif truth_score < 50 %}
+                bg-warning text-dark
+            {% else %}
+                bg-success
+            {% endif %}
+            p-3 rounded-pill">
+            {{ truth_score }}% True
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Action Buttons: View Original or Back to Search -->
+    <div class="d-flex justify-content-center gap-3 mt-4">
+        
+        <!-- Link to the original article -->
+        <a href="{{ article_url }}" target="_blank" class="cybertruck-btn">View Original Article</a>
+
+        <!-- Smart back button: return to search if query exists, otherwise back to home -->
+        {% if request.GET.q %}
+            <a href="{% url 'search_news' %}?q={{ request.GET.q }}" class="cybertruck-btn">Back to Search</a>
+        {% else %}
+            <a href="{% url 'home' %}" class="cybertruck-btn">Back to Home</a>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}

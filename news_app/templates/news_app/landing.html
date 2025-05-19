@@ -1,0 +1,31 @@
+{% extends 'news_app/base.html' %}
+{% block title %}Truth Machine | Landing{% endblock %}
+
+{% block content %}
+<!-- Landing page container -->
+<div class="container text-center my-5">
+    <div class="card p-5 bg-black rounded-4 shadow">
+
+        <!-- Welcome header -->
+        <h1 class="display-4 fw-bold text-light mb-4">
+            Welcome to <span class="text-primary">Truth Machine</span> 🛰️
+        </h1>
+
+        <!-- Introductory message -->
+        <p class="lead text-light mb-5">
+            Your portal to verified, trustworthy news. Explore the future of fact-checking!
+        </p>
+        
+        <!-- Navigation buttons -->
+        <div class="d-flex justify-content-center gap-3">
+            <a href="{% url 'home' %}" class="btn btn-primary btn-lg px-5">
+                Explore News
+            </a>
+            <a href="{% url 'dashboard' %}" class="btn btn-outline-light btn-lg px-5">
+                My Dashboard
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'news_app/base.html' %}
+{% block title %}Login - Truth Machine{% endblock %}
+
+{% block content %}
+
+<!-- Centered login form container -->
+<div class="d-flex justify-content-center align-items-center" style="min-height: 75vh;">
+    <div class="card p-5 shadow-lg" style="background: #1e1e1e; width: 100%; max-width: 400px;">
+
+        <!-- Welcome text -->
+        <h2 class="text-center mb-4 text-primary">Welcome Back</h2>
+
+        <!-- Login form -->
+        <form method="POST" class="text-start">
+            {% csrf_token %}
+            
+            <!-- Username input field -->
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control bg-dark text-light border-0" id="username" name="username" required>
+            </div>
+
+            <!-- Password input field -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control bg-dark text-light border-0" id="password" name="password" required>
+            </div>
+
+            <!-- Submit and registration buttons -->
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                <a href="{% url 'register' %}" class="btn btn-secondary">Create Account</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

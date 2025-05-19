@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Truth Machine{% endblock %}</title>
+
+    <!-- Bootstrap CSS for layout and responsiveness -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Load static files (Django template tag) -->
+    {% load static %}
+    
+    <!-- Custom Stylesheet -->
+    <link href="{% static 'news_app/style.css' %}" rel="stylesheet">
+
+    <!-- Importing Poppins font for a cleaner futuristic look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-light">
+
+<!-- Navbar for site navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">🛰️ Truth Machine</a>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {% if user.is_authenticated %}
+                    <!-- Show Dashboard and Logout when user is logged in -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <!-- Show Login link when user is not logged in -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main content container -->
+<div class="container my-5">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<!-- Bootstrap JS for interactivity (e.g., navbar toggles) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'news_app/base.html' %}
+
+{% block title %}Register - Truth Machine{% endblock %}
+
+{% block content %}
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 80vh;">
+    <div class="card bg-black text-light p-5 border border-secondary rounded-4 shadow-lg" style="width: 100%; max-width: 500px;">
+        <h2 class="mb-4 text-center">Create Your Account</h2>
+
+        <!-- Registration Form -->
+        <form method="POST">
+            {% csrf_token %}
+            <!-- Input for First Name -->
+            <div class="mb-3">
+                <input type="text" name="first_name" class="form-control futuristic-input" placeholder="First Name" required>
+            </div>
+            <!-- Input for Last Name -->
+            <div class="mb-3">
+                <input type="text" name="last_name" class="form-control futuristic-input" placeholder="Last Name" required>
+            </div>
+            <!-- Input for Username -->
+            <div class="mb-3">
+                <input type="text" name="username" class="form-control futuristic-input" placeholder="Username" required>
+            </div>
+            <!-- Input for Email Address -->
+            <div class="mb-3">
+                <input type="email" name="email" class="form-control futuristic-input" placeholder="Email" required>
+            </div>
+            <!-- Input for Password -->
+            <div class="mb-3">
+                <input type="password" name="password1" class="form-control futuristic-input" placeholder="Password" required>
+            </div>
+            <!-- Input for Password Confirmation -->
+            <div class="mb-4">
+                <input type="password" name="password2" class="form-control futuristic-input" placeholder="Confirm Password" required>
+            </div>
+            <!-- Submit Button -->
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary futuristic-btn">Register</button>
+            </div>
+        </form>
+
+        <!-- Link to login page if user already has an account -->
+        <p class="text-center mt-4">
+            Already have an account? <a href="{% url 'login' %}" class="text-info">Login here</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

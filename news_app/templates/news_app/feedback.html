@@ -1,0 +1,35 @@
+{% extends 'news_app/base.html' %}
+{% block title %}Feedback - Truth Machine{% endblock %}
+
+{% block content %}
+
+<!-- Center the feedback form vertically and horizontally -->
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="card p-5 shadow-lg" style="background: #1e1e1e; width: 100%; max-width: 600px;">
+        
+        <!-- Title and subtitle encouraging users to share feedback -->
+        <h2 class="text-center mb-4 text-primary">Leave Feedback</h2>
+        <p class="text-center mb-4">
+            We value your thoughts! Help us improve Truth Machine by sharing your feedback.
+        </p>
+
+        <!-- Feedback form starts here -->
+        <form method="POST" class="text-start">
+            {% csrf_token %}
+            
+            <!-- Comment input field -->
+            <div class="mb-3">
+                <label for="comment" class="form-label">Your Feedback</label>
+                {{ form.comment|as_crispy_field }}
+            </div>
+
+            <!-- Submit and navigation buttons -->
+            <div class="d-grid gap-2 mt-4">
+                <button type="submit" class="btn btn-primary btn-lg">Submit Feedback</button>
+                <a href="{% url 'home' %}" class="btn btn-secondary btn-lg">Back to Home</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

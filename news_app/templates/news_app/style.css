@@ -1,0 +1,122 @@
+/* Basic Reset for the whole website */
+body {
+    background-color: #1b1e23;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif; /* Futuristic style font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom futuristic Cybertruck-inspired Button */
+.cybertruck-btn {
+    display: inline-block;
+    font-weight: bold;
+    padding: 15px 30px;
+    margin: 10px;
+    border: 2px solid #00ffea;
+    border-radius: 12px;
+    background-color: #0a0a0a;
+    color: #00ffea;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px #00ffea, 0 0 30px #00ffea inset;
+}
+
+/* Hover animation for the Cybertruck button */
+.cybertruck-btn:hover {
+    background-color: #00ffea;
+    color: #0a0a0a;
+    box-shadow: 0 0 30px #00ffea, 0 0 60px #00ffea inset;
+    transform: scale(1.05);
+}
+
+/* Cybertruck-themed Search Bar */
+.cybertruck-search {
+    width: 500px;
+    padding: 15px;
+    border: 2px solid #00ffea;
+    border-radius: 10px;
+    background-color: #000000;
+    color: #00ffea;
+    font-size: 1.1rem;
+    outline: none;
+    box-shadow: 0 0 10px #00ffea, inset 0 0 5px #00ffea;
+    transition: all 0.3s ease;
+}
+
+/* Placeholder text style inside the search bar */
+.cybertruck-search::placeholder {
+    color: #00ffee88;
+}
+
+/* Focus effect when clicking inside search */
+.cybertruck-search:focus {
+    border-color: #00ffee;
+    box-shadow: 0 0 20px #00ffea, inset 0 0 10px #00ffea;
+    background-color: #0d0d0d;
+}
+
+/* Truth Score badge style */
+.truth-score {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid #00ffea;
+    border-radius: 50px;
+    background-color: #000;
+    color: #00ffea;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 0 10px #00ffea, inset 0 0 5px #00ffea;
+    margin-top: 20px;
+}
+
+/* Utility for center-aligning text */
+.text-center {
+    text-align: center;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4 {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Cyber-themed Card Styling */
+.cyber-card {
+    background-color: #000000;
+    border: 2px solid #00ffea;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    box-shadow: 0 0 20px #00ffea;
+}
+
+/* General link styling */
+a {
+    color: #00ffea;
+    text-decoration: none;
+}
+
+/* Link hover effects */
+a:hover {
+    color: #ffffff;
+}
+
+/* Custom Cybertruck Navbar */
+.navbar-custom {
+    background-color: #000;
+    border-bottom: 2px solid #00ffea;
+}
+
+/* Navbar links style */
+.nav-link {
+    color: #00ffea;
+}
+
+/* Navbar link hover */
+.nav-link:hover {
+    color: #ffffff;
+}
